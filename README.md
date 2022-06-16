@@ -9,10 +9,10 @@
 + [Technologies used](#technologies-used)
 + [Known-Bugs](#known-bugs)
 + [Contact Information](#contact-information)
-+ [Copyright and License](#copyright-and-license-information)
++ [Copyright and License](#copyright-and-license)
 
 ## Description
-The-Block is A neighborhood mapping application where a user must signup, join a hood, and once in a hood, they can see businesses and posts in only that specifoc hood.
+The-Block is A neighborhood mapping application where a user must signup, join a hood, and once in a hood, they can see businesses and posts in only that specific hood.
 
 <!-- ![Project-design](/static/images/screenshot.png) -->
 
