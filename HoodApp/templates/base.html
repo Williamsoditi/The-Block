@@ -1,0 +1,42 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A neighbourhood application">
+
+    {% if title %}
+    <title>The~Block | {{title}}</title>
+    {% else %}
+    <title>The~Block</title>
+    {% endif %}
+
+    {% block styles %}
+        {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock %}
+
+</head>
+<body>
+    {% include "navbar.html" %}
+
+    {% block content %}
+
+    {%endblock%}
+    
+
+
+
+
+
+    {% block scripts %}
+        <script src="https://kit.fontawesome.com/f8fc184848.js" crossorigin="anonymous"></script>
+        <script src="{% static 'js/base.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %}
+    {% endblock %}
+</body>
+</html>
