@@ -9,13 +9,14 @@
     <meta name="description" content="A neighbourhood application">
 
     {% if title %}
-    <title>The~Block | {{title}}</title>
+    <title>The ~ Block | {{title}}</title>
     {% else %}
-    <title>The~Block</title>
+    <title>The ~ Block</title>
     {% endif %}
 
     {% block styles %}
-        {% bootstrap_css %}
+    {% bootstrap_css %}
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
