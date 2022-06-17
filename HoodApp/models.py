@@ -5,6 +5,21 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 
+#LOCATION
+class Location(models.Model):
+    name = models.CharField(max_length=20,null=True)
+    created_on = models.DateTimeField(auto_now_add=True,null=True)
+    updated_on = models.DateTimeField(auto_now=True,null=True)
+
+    def __str__(self):
+        return self.name
+
+    def save_location(self):
+        self.save()
+
+    def delete_location(self):
+        self.delete()
+
 # Neighbourhood model
 class Neighbourhood(models.Model):
     hood_name = models.CharField(max_length=20,blank=True,null=True,unique=True)
@@ -34,21 +49,6 @@ class Neighbourhood(models.Model):
         hood = cls.objects.filter(neighbourhood_id=neighbourhood_id)
         return hood
 
-#LOCATION
-class Location(models.Model):
-    name = models.CharField(max_length=20,null=True)
-    created_on = models.DateTimeField(auto_now_add=True,null=True)
-    updated_on = models.DateTimeField(auto_now=True,null=True)
-
-    def __str__(self):
-        return self.name
-
-    def save_location(self):
-        self.save()
-
-    def delete_location(self):
-        self.delete()
-
 #PROFILE 
 class Profile(models.Model):
     prof_photo = CloudinaryField('image')
@@ -71,4 +71,25 @@ class Profile(models.Model):
     @receiver(post_save, sender=User)
     def save_user_profile(sender, instance, **kwargs):
         instance.profile.save()
+
+# POST
+class Post(models.Model):
+    title = models.CharField(max_length=50)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
+    description = models.TextField(max_length=300)
+    hood = models.ForeignKey(Neighbourhood,on_delete=models.CASCADE,null=True)
+
+    def __str__(self):
+        return self.title
+
+    @classmethod
+    def get_post(cls, hood):
+        post = Post.objects.filter(hood=hood)
+        return post
+
+    def save_post(self):
+        self.save()
+
+    def delete_post(self):
+        self.delete()
 
