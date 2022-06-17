@@ -1,0 +1,14 @@
+body{
+    overflow: hidden;
+}
+.landing-page{
+    background-image: url(../images/landin_.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vh;
+    background-size: cover;
+    opacity: 0.9;
+    padding: 21.5vw;
+}
+/* .landing-page::-webkit-scrollbar {
+    display: none;
+} */
