@@ -49,6 +49,39 @@ class Neighbourhood(models.Model):
         hood = cls.objects.filter(neighbourhood_id=neighbourhood_id)
         return hood
 
+#BUSINESS
+class Business(models.Model):
+    business_name = models.CharField(max_length=100)
+    business_logo = CloudinaryField('logo')
+    business_contact = models.CharField(max_length=50)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    location = models.ForeignKey(Location,on_delete=models.CASCADE, null=True)
+    neighbourhood = models.ForeignKey(Neighbourhood, on_delete=models.SET_NULL, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
+
+    def __str__(self):
+        return self.business_name
+
+    def create_business(self):
+        self.save()
+
+    def update_business(self):
+        self.save()
+
+    def delete_business(self):
+        self.delete()
+
+    @classmethod
+    def search_by_name(cls, search_term):
+        business = cls.objects.filter(business_name__icontains=search_term)
+        return business
+
+    @classmethod
+    def get_business(cls,id):
+        business = Business.objects.filter(neighbourhood__pk = id)
+        return business
+
+
 #PROFILE 
 class Profile(models.Model):
     prof_photo = CloudinaryField('image')
