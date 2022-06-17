@@ -1,14 +1,38 @@
+*{
+    color: white;
+}
+::-webkit-scrollbar{
+    display: none;
+}
 body{
     overflow: hidden;
+}
+.overall{
+    margin-top: -2vw;
 }
 .landing-page{
     background-image: url(../images/landin_.jpg);
     background-repeat: no-repeat;
     background-size: 100vh;
     background-size: cover;
-    opacity: 0.9;
-    padding: 21.5vw;
+    opacity: 1;
+    padding: 22vw;
+    overflow: hidden;
 }
-/* .landing-page::-webkit-scrollbar {
-    display: none;
-} */
+.display-1{
+    font-size: 9vw;
+    font-weight: bolder;
+    margin-top: -7vw;
+}
+.land-info{
+    font-weight: bold;
+    font-size: 2vw;
+    /* margin-top: -2vw; */
+}
+.main-btn{
+    width: 20vw;
+    margin-top: 2vw;
+}
+.main-btn:hover{
+    cursor: progress;
+}
