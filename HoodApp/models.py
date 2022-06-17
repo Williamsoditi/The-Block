@@ -33,4 +33,19 @@ class Neighbourhood(models.Model):
         hood = cls.objects.filter(neighbourhood_id=neighbourhood_id)
         return hood
 
+#LOCATION
+class Location(models.Model):
+    name = models.CharField(max_length=20,null=True)
+    created_on = models.DateTimeField(auto_now_add=True,null=True)
+    updated_on = models.DateTimeField(auto_now=True,null=True)
+
+    def __str__(self):
+        return self.name
+
+    def save_location(self):
+        self.save()
+
+    def delete_location(self):
+        self.delete()
+
 
