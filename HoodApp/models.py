@@ -84,7 +84,7 @@ class Business(models.Model):
 
 #PROFILE 
 class Profile(models.Model):
-    prof_photo = CloudinaryField('image')
+    profile_photo = CloudinaryField('image')
     bio = models.TextField(max_length=1000, null=True)
     phone_number = models.CharField(max_length=10, blank=True, null=True)
     location = models.ForeignKey(Location,on_delete=models.CASCADE, null=True)
