@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@100;200;300;400;500;600;700;800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+p, a{
+    font-family: 'Raleway', sans-serif;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Anek Malayalam', sans-serif;
+}
+.signup {
+    background-color: #028090 !important;
+    border-color: none;
+}
+.login {
+    min-height: 100vh;
+    background-color: #F0F3BD;
+}
+.sign-image {
+    background-image: url(../images/sign-in.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.alternative{
+    font-weight: 400;
+    font-size: 17px;
+}
+.sign-head{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+.sign-head:hover{
+    color: #028090;
+}

@@ -1,0 +1,31 @@
+{%extends 'registration/base.html' %} 
+{% load bootstrap5 %} 
+{% block content %}
+
+<div class="container-fluid ps-md-0">
+    <div class="row g-0">
+        <div class="d-none d-md-flex col-md-4 col-lg-6 sign-image"></div>
+        <div class="col-md-8 col-lg-6 signup">
+            <div class="login d-flex align-items-center py-5">
+                <div class="container">
+                    <div class="row">
+                        <h2 class="text-center"><a href="/" class="sign-head">THE ~ BLOCK</a></h2>
+                        <div class="col-md-9 col-lg-8 mx-auto mt-3">
+                            <h3 class="login-heading mb-4">Sign In</h3>
+                            <hr>
+                            <form method="post">
+                                {%csrf_token%} {% bootstrap_form form%}
+
+                                <input type="submit" class="btn btn-primary form-control my-3 signup" value="Sign-In" />
+                                <input type="hidden" name="next" value="{{next}}">
+                            </form>
+                            <p class="alternative">Not a member yet?&nbsp;<span><a href="/accounts/register/" class="register">Register now</a></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
