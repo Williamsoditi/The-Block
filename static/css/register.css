@@ -11,3 +11,21 @@ p, a{
 h1, h2, h3, h4, h5, h6{
     font-family: 'Anek Malayalam', sans-serif;
 }
+::-webkit-scrollbar{
+    display: none;
+    overflow: hidden;
+}
+.sign-up-image {
+    background-image: url(../images/sign-up.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.alternative{
+    font-weight: 400;
+    font-size: 17px;
+}
+.signup{
+    background-color: #028090 !important;
+    border-color: none;
+}
