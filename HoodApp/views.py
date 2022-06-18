@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 @csrf_exempt
-def index(request):    
+def home(request):    
     current_user = request.user
     # profile.user = current_user
 
