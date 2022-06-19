@@ -1,0 +1,41 @@
+{%extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+      <!-- Empty div -->
+      <div class="col-md-3"></div>
+      <div class="col-md-6 mt-3">
+        <div class="panel panel-default">
+  
+          <div class="panel-heading">
+            <h3 class="text-center"><strong>Start a Business</strong></h3>
+            <hr>
+          </div>
+          <div class="panel-body">
+  
+            <form  action="{% url 'create_business' %}" method="post"enctype="multipart/form-data">
+              {% csrf_token %}
+              {% bootstrap_form biz_form%}
+  
+              <div class="form-group text-center">
+                <input type="submit" class= "btn btn-primary mt-3 prof-btn" value="Create Business">
+              </div>
+            </form>
+  
+          </div>
+        </div>
+  
+      </div>
+      <!-- empty div -->
+      <div class="col-md-3"></div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
