@@ -1,6 +1,6 @@
-*{
+/* *{
     color: white;
-}
+} */
 ::-webkit-scrollbar{
     display: none;
 }
@@ -23,10 +23,12 @@ body{
     font-size: 9vw;
     font-weight: bolder;
     margin-top: -7vw;
+    color: white;
 }
 .land-info{
     font-weight: bold;
     font-size: 2vw;
+    color: white;
     /* margin-top: -2vw; */
 }
 .main-btn{

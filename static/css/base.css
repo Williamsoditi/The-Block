@@ -11,3 +11,8 @@ p, a{
 h1, h2, h3, h4, h5, h6{
     font-family: 'Anek Malayalam', sans-serif;
 }
+.prof-btn{
+    border-radius: 0%;
+    width: 20vw;
+    padding: 1vw;
+}
