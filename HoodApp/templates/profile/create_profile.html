@@ -2,7 +2,38 @@
 {% load bootstrap5 %} 
 {% block content %}
 
-
+<div class="container-fluid" style="overflow:scroll!important">
+    <div class="row"><br>
+      <!-- Empty div -->
+      <div class="col-md-4"></div>
+      <div class="col-md-6"style="margin-left:25%">
+        <div class="panel panel-default">
+  
+          <div class="panel-heading">
+            <h3 class="text-center"><strong>Create A Profile</strong></h3>
+            <hr>
+          </div>
+          <div class="panel-body">
+  
+            <form  action="{%url 'create_profile'%}" method="post"enctype="multipart/form-data">
+              {% csrf_token %}
+              {% bootstrap_form form%}
+  
+              <div class="form-group text-center">
+                <a href="#"><button class="btn btn-primary mt-3 prof-btn" type="submit">Create Profile</button></a>
+              </div>
+    
+            </form>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+      <!-- empty div -->
+      <div class="col-md-4"></div>
+    </div>
+</div>
 
 
 

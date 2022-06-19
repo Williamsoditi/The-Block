@@ -3,9 +3,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: scroll;
-    overflow-x: hidden;
+    overflow: auto!important;
 }
+
 p, a{
     font-family: 'Raleway', sans-serif;
 }
