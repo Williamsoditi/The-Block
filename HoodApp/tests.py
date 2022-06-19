@@ -72,18 +72,18 @@ class BusinessTestClass(TestCase):
 
 class NeighborhoodTestClass(TestCase):
     def setUp(self):
-        self.hood1 = Neighbourhood(hood_name='Test Business',hood_image='logo.png',help_line='test@test.com',created_on='12/06/2022',updated_on='16/06/2022',description='Test hood',resident_count='5')
+        self.hood = Neighbourhood(hood_name='Kawangware',hood_image='logo.png',help_line='test@test.com',created_on='12/06/2022',updated_on='16/06/2022',description='Test hood',resident_count='5')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.hood1, Neighbourhood))
+        self.assertTrue(isinstance(self.hood, Neighbourhood))
 
     def test_create_method(self):
-        self.hood1.save()
+        self.hood.save()
         businesses = Business.objects.all()
         self.assertFalse(len(businesses) > 0)
     
     def test_delete_method(self):
-        self.hood1.save()
-        self.hood1.delete_neighbourhood()
+        self.hood.save()
+        self.hood.delete_neighbourhood()
         businesses = Business.objects.all()
         self.assertFalse(len(businesses) > 0)

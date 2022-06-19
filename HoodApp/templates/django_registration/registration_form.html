@@ -14,7 +14,7 @@
                 <hr>
                 <form method='post' >
                     {%csrf_token%}
-                    {% bootstrap_form form %}              
+                    {% bootstrapost_form form %}              
                     <button class="btn btn-primary form-control my-3 signup" type="submit">Sign up</button>
                     <input type="hidden" name="next" value="{{next}}">
                 </form>
