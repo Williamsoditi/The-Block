@@ -17,7 +17,7 @@ The-Block is A neighborhood mapping application where a user must signup, join a
 <!-- ![Project-design](/static/images/screenshot.png) -->
 
 The following is a live link to the project:
-[Click here](``)
+[Click here](https://oditi-jirani.herokuapp.com/)
 
 ## Installation process
 To access my repository link:
