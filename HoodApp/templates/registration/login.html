@@ -15,7 +15,8 @@
                             <form method="post">
                                 {%csrf_token%} {% bootstrap_form form%}
 
-                                <input type="submit" class="btn btn-primary form-control my-3 signup" value="Sign-In" />
+                                <input type="submit" class="btn btn-primary form-control my-3 signup" value="Sign-In"
+                                />
                                 <input type="hidden" name="next" value="{{next}}">
                             </form>
                             <p class="alternative">Not a member yet?&nbsp;<span><a href="/accounts/register/" class="register">Register now</a></span></p>
