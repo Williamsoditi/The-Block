@@ -20,3 +20,9 @@ h1, h2, h3, h4, h5, h6{
 .hoodies{
     border-radius: 0%;
 }
+#hood-img{
+    height: 30vw;
+    width: 30vw;
+    align-items: center;
+    border-radius: 15px;
+}
