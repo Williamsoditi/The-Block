@@ -8,25 +8,31 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="/accounts/login/">Register/Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/hoods">Hoods</a>
                 </li>
-                <!-- Dropdown -->
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="/admin">Admin</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="">Profile</a>
+                </li>
+                {% endif %}
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                         data-mdb-toggle="dropdown" aria-expanded="false" id="navbardrop">
-                        Dropdown link
+                        <i class="fas fa-user"></i>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <div class="dropdown-menu">
                             {% if user.is_authenticated %}
-                            <a class="dropdown-item" href="#">Profile</a>
-                            <a class="dropdown-item" href="#">Add Hood</a>
+                            <a class="dropdown-item" href="/profile">Profile</a>
+                            <a class="dropdown-item" href="/create_hood/">Add Hood</a>
                             <a class="dropdown-item" href="/logout">Logout</a>
                             {% else %}
                             <small class="text-center">Please log in</small>

@@ -18,12 +18,13 @@
                         <a href="{%url 'specific_hood' hood.id %}"><p class="name"><strong>{{hood.hood_name}}</strong></p></a>
                         <p class="description">{{hood.description}}</p>
                         <p class="residents">{{hood.members.count}} Member{{hood.members.count|pluralize}}</p>
+                        <p class="help-line"><strong>Help-Line:</strong>&nbsp;{{hood.help_line}}</p>
                         {% if request.user.profile.neighbourhood == hood %}
                         <div class="col-sm-6 text-center">
-                        <a href="{% url 'leave_hood' hood.id %}" class="btn btn btn-warning mt-4 hoodies">Leave Hood</a>
+                        <a href="{% url 'leave_hood' hood.id %}" class="btn btn btn-warning mt-3 hoodies">Leave Hood</a>
                         {% elif not request.user.profile.neighbourhood %}
                         <div class="col-sm-6 text-center">
-                        <a href="{% url 'join_hood' hood.id %}" class="btn btn btn-success mt-4 hoodies">Join Hood</a>
+                        <a href="{% url 'join_hood' hood.id %}" class="btn btn btn-primary mt-4 hoodies">Join Hood</a>
                     </div>   
                     {% endif %}
                     </div>

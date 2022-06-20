@@ -2,6 +2,44 @@
 {% load static %}
 {% load bootstrap4 %}
 {% block content %}
+<div class="text-center mt-3">
+    <h1>About this Hood</h1>
+    <hr>
+</div>
+<div class="container text-center mt-2">
+    <div class="row">
+        <div class="col-sm-5">
+            <img src="{{ hood.hood_image.url }}" alt="hood-img" class="img-fuid img-thumbnail">
+        </div>
+        <div class="col-sm-7">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">{{ hood.hood_name }} | {{ hood.location }}</h4>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-text">
+                        <span style="margin-top:4%;font-family:'Playfair Display', serif;font-size:1.8em"><strong>{{hood.members.count}}</strong> Member{{hood.members.count|pluralize}}
+                        | <strong >{{ hood.business.count }}</strong> Businesses | <strong>
+                        {{ hood.hood_post.count }}</strong> Post{{ hood.hood_post.count|pluralize }}</span>
+                    </h6>              
+                </div>
+                <p>{{hood.description}}</p>
+                <p><strong>Helpline:&nbsp;</strong>{{hood.help_line}}</p>
+                <div class="card-footer row">
+                    <div class="col-sm-4">
+                        <a href="{% url 'create_business' %}" class="btn btn-success">Add business</a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="{% url 'create_post' %}" class="btn btn-dark">Start Post</a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="#" class="btn btn-light">View Posts</a>
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
 
 
 
