@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6{
     font-family: 'Anek Malayalam', sans-serif;
 }
 .signup {
-    background-color: #028090 !important;
+    /* background-color: #028090 !important; */
     border-color: none;
 }
 .login {
@@ -36,6 +36,6 @@ h1, h2, h3, h4, h5, h6{
     color: black;
     font-weight: 700;
 }
-.sign-head:hover{
+/* .sign-head:hover{
     color: #028090;
-}
+} */
