@@ -1,0 +1,50 @@
+{%extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+
+<div class="container-fluid text-center mt-4">
+    <h1>Popular Hoods</h1>
+    <hr>
+    <div class="row">
+        {% for hood in hoods %}
+        <div class="col-sm-4">
+            <div class="card-group">
+                <div class="card">
+                    <img src="{{hood.hood_image.url}}" class="img-fluid img-thumbnail" alt="card-img">
+                </div>
+                <div class="card-body">
+                    <a href="{%url 'specific_hood' hood.id %}"><p class="name"><strong>{{hood.hood_name}}</strong></p></a>
+                    <p class="description">{{hood.description}}</p>
+                    <p class="residents">{{hood.members.count}} Member{{hood.members.count|pluralize}}</p>
+                    {% if request.user.profile.neighbourhood == hood %}
+                    <div class="col-sm-6">
+                        <a href="{% url 'leave_hood' hood.id %}" class="btn btn btn-warning mt-4 hoodies">Leave Hood</a>
+                    </div>
+                    {% elif not request.user.profile.neighbourhood %}
+                    <div class="col-sm-6">
+                        <a href="{% url 'join_hood' hood.id %}" class="btn btn btn-success mt-4 hoodies">Join Hood</a>
+                    </div>   
+                    {% endif %}   
+                </div>
+                <div class="card-footer">
+                    <p><strong>Created on:</strong>{{hood.created_on | timesince }}&nbsp;ago!</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <div id="business">
+            {% for biz in biznas %}
+            {{biz.business_name}}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

@@ -17,4 +17,6 @@ h1, h2, h3, h4, h5, h6{
     width: 20vw;
     padding: 1vw;
 }
-
+.hoodies{
+    border-radius: 0%;
+}
