@@ -5,8 +5,8 @@
 <div class="container-fluid">
     <div class="row"><br>
       <!-- Empty div -->
-      <div class="col-md-4"></div>
-      <div class="col-md-6"style="margin-left:25%">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
         <div class="panel panel-default">
   
           <div class="panel-heading">
@@ -17,10 +17,10 @@
   
             <form  action="" method="POST"enctype="multipart/form-data">
               {% csrf_token %}
-              {% bootstrapost_form form%}
+              {% bootstrap_form form%}
   
               <div class="form-group text-center">
-                <a href="#"><button class="btn btn-primary mt-3 prof-btn" type="submit">Edit Profile</button></a>
+                <input type="submit" class= "btn btn-primary mt-3 prof-btn" value="Update Profile">
               </div>
     
             </form>
@@ -31,7 +31,7 @@
   
       </div>
       <!-- empty div -->
-      <div class="col-md-4"></div>
+      <div class="col-md-3"></div>
     </div>
 </div>
 

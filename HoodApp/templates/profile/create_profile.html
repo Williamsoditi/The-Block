@@ -17,10 +17,10 @@
   
             <form  action="{%url 'create_profile'%}" method="post"enctype="multipart/form-data">
               {% csrf_token %}
-              {% bootstrapost_form form%}
+              {% bootstrap_form form%}
   
               <div class="form-group text-center">
-                <a href="#"><button class="btn btn-primary mt-3 prof-btn" type="submit">Create Profile</button></a>
+                <input type="submit" class= "btn btn-primary mt-3 prof-btn" value="Create Profile">
               </div>
     
             </form>

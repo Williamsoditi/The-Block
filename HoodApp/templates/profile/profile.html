@@ -2,39 +2,51 @@
 {% load bootstrap4 %}
 {% block content %}
 {% load static %}
-<div class="container">
-    <div class="container px-2 row justify-content-center">
+<div class="container-fluid">
+    <div class="container-fluid px-2 row justify-content-center">
         <div class="col-md-8">
             <h2 class="text-center mt-5">Your Profile</h2>
             <hr>
             <!-- Top Profile -->
             <div class="py-5 mx-5 mb-2  d-flex justify-content-evenly align-items-start">
-                <!-- Profile Picture -->
-                <div class="img-div mx-0">
-                    {% if profile.profile_photo %}                  
-                      <img src="{{profile.profile_photo}}" alt="" class="img-fluid rounded img-resp">
-                    {% else %}
-                      <img src="{% static 'images/user.png'%}"  alt="" class="img-fluid rounded img-resp">
-                    {% endif %}
-                </div>
-                <!-- Side Description -->
-                <div>
-                    <div class="d-flex align-items-center justify-content-start">
-                        <h2 class="me-3">{{profile.user.username}}</h2>
-                        <a href="{%url 'update_profile' user.id %}"><button class="btn btn-info">Edit Profile</button></a>
+                <div class="col-sm-6">
+                    <!-- Profile Picture -->
+                    <div class="img-div">
+                        {% if profile.profile_photo %}                  
+                          <img src="{{profile.profile_photo.url}}" alt="" class=" mx-0 img-resp">
+                        {% else %}
+                          <img src="{% static 'images/user.png'%}"  alt="" class="img-fluid rounded img-resp">
+                        {% endif %}
                     </div>
-                    <div class="d-flex my-3 align-items-center justify-content-between">
+                </div>
+                <div class="col-sm-6 mx-5">
+                    <!-- Side Description -->
+                    <div>
+                        <div class="d-flex align-items-center justify-content-start">
+                            <h2 class="me-3">{{profile.user.username}}</h2>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="{%url 'update_profile' user.id %}"><button class="btn btn-info">Edit Profile</button></a>
+                        </div>
+                        <div class="d-flex my-3 align-items-center justify-content-between">
+                            <p class="lead me-3">
+                                {% if profile.bio %}
+                                {{ profile.bio }}
+                                {% else %}
+                                <span class="text-danger"><strong>Please add a bio</strong></span>
+                                {% endif %}
+                            </p>
+                        </div>
                         <p class="lead me-3">
-                            {% if profile.bio %}
-                            {{ profile.bio }}
+                            {% if profile.location %}
+                            {{ profile.location }}
                             {% else %}
-                            <span class="text-danger"><strong>Please add a bio</strong></span>
+                            <span class="text-danger"><strong>Please input a location</strong></span>
                             {% endif %}
                         </p>
-                    </div>
-                    <h5>Member since: {{ user.date_joined }}</h5>
-                    <a href="#"><button class="btn btn-primary mt-5 prof-btn">Create-Hood</button></a>
+                        <h5>Member since: {{ user.date_joined }}</h5>
+                        <a href="{%url 'create_hood' %}"><button class="btn btn-primary mt-5 text-center">Create-Hood</button></a>
+                    </div>         
                 </div>
+                
             </div>
         </div>
     </div>

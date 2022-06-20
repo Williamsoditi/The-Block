@@ -29,7 +29,7 @@ class Neighbourhood(models.Model):
     admin = models.ForeignKey('Profile', on_delete=models.CASCADE,null=True,related_name='hood')
     created_on = models.DateTimeField(auto_now_add=True,null=True)
     updated_on = models.DateTimeField(auto_now=True,null=True)
-    location = models.ForeignKey(Location,on_delete=models.CASCADE, null=True)
+    location = models.ForeignKey(Location,on_delete=models.CASCADE, null=True, blank=True)
     help_line = models.CharField(max_length=20,null=True)
 
     
